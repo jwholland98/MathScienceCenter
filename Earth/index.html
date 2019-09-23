@@ -11,7 +11,7 @@
     body {
         background-color:black;
         color:white;
-        font-size:40px;
+        font-size:30px;
     }
    .sidebar {
         grid-area: sidebar;
@@ -45,10 +45,10 @@
         font-size:15px;
     }
     th {
-        font-size:20px;
+        font-size:18px;
     }
     table {
-      background-color:#202020;
+      <!-background-color:#202020;-!>
       border:0px;
       position:absolute;
       left:0;
@@ -73,7 +73,7 @@
 		}
 	}
     
-	resetTimer();
+	//resetTimer();
 	
 </script>
 
@@ -511,7 +511,7 @@ void main(){
       var material2 = new THREE.MeshBasicMaterial( { map:tex } );
       //var geometry2 = new THREE.SphereGeometry(50,100,100);
       //var geometry2 = new THREE.SphereGeometry(250, 100, 100);
-      var geometry2 = new THREE.SphereGeometry(450, 100, 100);
+      var geometry2 = new THREE.SphereGeometry(450, 100, 100);//here is where to resize Globe
       sphere = new THREE.Mesh( geometry2, material2 );
       sphere.name = "earth_" + filename;
       sphere.translateOnAxis(new THREE.Vector3(0.25, 0, 1), -500);
@@ -704,7 +704,7 @@ void main(){
         "CO2 Levels": "3,371 ppm",
         "Radiation Levels": "Mild",
         "Distance from Moon": "226,434 miles",
-        "Life Forms": "Animals in Marine Exibit"
+        "Life Forms": "Animals in <br>Marine Exibit"
       }
     },
     {
@@ -720,7 +720,7 @@ void main(){
         "CO2 Levels": "323 ppm",
         "Radiation Levels": "Mild",
         "Distance from Moon": "232,100 miles",
-        "Life Forms": "First Vertebrates, Land Plants"
+        "Life Forms": "First Vertebrates,<br> Land Plants"
       }
     },
     {
@@ -745,7 +745,7 @@ void main(){
       "bgcolor": "white",
       "text":"Earth's 6th supercontinent!! In 50 million years, Earth's surface will appear dramatically different than it does today. The Atlantic Ocean will enlarge, while the Pacific Ocean will shrink. Africa will move north, obliterating the Mediterranean Ocean. A massive mountain range, much higher than the Himalayas, will form in Southern Europe. Antarctica and Australia will move north.",      
       "stats": {
-        "Time Period": "Plus 250 million years",
+        "Time Period": "Plus 250 <br>million years",
         "Length of Day": "25.4 hours",
         "Surface Temperature": "? °F",
         "O2 Levels": "? ppm",
@@ -827,7 +827,7 @@ function onLoad() {
     );
     //camera.position.set( 0, 0, 600);
     //camera.position.set(5000, 5000, 1000);
-    camera.position.set(1000, 0, 5000);
+    camera.position.set(1000, 300, 5000);//here changes where globe is on screen
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     scene.add( camera );
 
@@ -895,7 +895,7 @@ function onLoad() {
     })();
 
 
-	
+	resetTimer();
 	
 }
 window.onload = onLoad;
@@ -907,8 +907,8 @@ window.onload = onLoad;
 	
 	
 <div class="wrapper">
-  <div class="box sidebar" style='font-size:20px;'>
-      <div id='title' style='font-size:40px;'>Earth Stages</div>
+  <div class="box sidebar" style='font-size:17px;'>
+      <div id='title' style='font-size:30px;'>Earth Stages</div>
       <div id='data'></div>
   </div>
   <div class="box content" id="viewport">
