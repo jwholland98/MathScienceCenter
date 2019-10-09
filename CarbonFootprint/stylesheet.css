@@ -1,0 +1,47 @@
+body{
+    background-color: tan;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    background-image: url(treeBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+h1, h2{
+    background-color: darkolivegreen;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+h2{
+    font-size: 95%;
+    width: 500px;
+    margin: auto;
+}
+
+#question1{
+    background-color: rgb(50, 182, 45);
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 300px;
+    font-size: 200%;
+    vertical-align: center;
+}
+
+#num{
+    font-size: 50%;
+}
+
+label.choices{
+    display: inline;
+    padding: 15px;
+    /*need to see why style isnt changing*/
+    font-family: arial, helvetica, sans-serif;
+    font-size: 32px;
+}
+label.choices:hover{
+    border: 1px solid black;
+}
