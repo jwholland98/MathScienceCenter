@@ -17,18 +17,44 @@
     <br>
     <br>
     <br>
-    <div id="question1">
-        <p id="num">Question 1 of 10:</p>
-        <p>Do you recycle?</p>
-        <label for="first" class="choices">Always:</label>
-        <input type="radio" id="first" name="choice" value="">
-        <label for="second" class="choices">Sometimes:</label>
-        <input type="radio" id="second" name="choice" value="">
-        <label for="third" class="choices">Never:</label>
-        <input type="radio" id="third" name="choice" value="">
-        <br>
-        <!--javascript function in button--> 
-        <button>submit</button>
+    <div id="allQuestions">
+        <div id="question1">
+            <p id="num">Question 1 of 10:</p>
+            <p>How often do you recycle?</p>
+            <label for="first" class="choices">Always:</label>
+            <input type="radio" id="first" name="choice" value="">
+            <label for="second" class="choices">Sometimes:</label>
+            <input type="radio" id="second" name="choice" value="">
+            <label for="third" class="choices">Never:</label>
+            <input type="radio" id="third" name="choice" value="">
+            <br>
+            <button onClick="changeState()">submit</button>
+        </div>
+        <div id="question2">
+                <p id="num">Question 2 of 10:</p>
+                <p>How often do you carpool?</p>
+                <label for="first" class="choices">Always:</label>
+                <input type="radio" id="first" name="choice" value="">
+                <label for="second" class="choices">Sometimes:</label>
+                <input type="radio" id="second" name="choice" value="">
+                <label for="third" class="choices">Never:</label>
+                <input type="radio" id="third" name="choice" value="">
+                <br>
+                <button onClick="changeState()">submit</button>
+            </form>
+        </div>
+        <div id="question3">
+            <p id="num">Question 3 of 10:</p>
+            <p>How often do you ride a bike?</p>
+            <label for="first" class="choices">Always:</label>
+            <input type="radio" id="first" name="choice" value="">
+            <label for="second" class="choices">Sometimes:</label>
+            <input type="radio" id="second" name="choice" value="">
+            <label for="third" class="choices">Never:</label>
+            <input type="radio" id="third" name="choice" value="">
+            <br>
+            <button onClick="changeState()">submit</button>
+        </div>
     </div>
 </body>
 </html>
