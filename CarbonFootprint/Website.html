@@ -28,6 +28,10 @@
             <label for="third" class="choices">Never:</label>
             <input type="radio" id="third" name="choice" value="">
             <br>
+            <button onClick="verify()">submit</button>
+        </div>
+        <div id="factoid1">
+            <p>Recycling can help by...</p>
             <button onClick="changeState()">submit</button>
         </div>
         <div id="question2">
@@ -40,8 +44,12 @@
                 <label for="third" class="choices">Never:</label>
                 <input type="radio" id="third" name="choice" value="">
                 <br>
-                <button onClick="changeState()">submit</button>
+                <button onClick="verify()">submit</button>
             </form>
+        </div>
+        <div id="factoid2">
+            <p>Carpooling helps cut down on...</p>
+            <button onClick="changeState()">submit</button>
         </div>
         <div id="question3">
             <p id="num">Question 3 of 10:</p>
@@ -53,7 +61,16 @@
             <label for="third" class="choices">Never:</label>
             <input type="radio" id="third" name="choice" value="">
             <br>
+            <button onClick="verify()">submit</button>
+        </div>
+        <div id="factoid3">
+            <p>Riding your bike lowers...</p>
             <button onClick="changeState()">submit</button>
+        </div>
+        <div id="finalScore">
+            <p>Your scored:</p><!--add way to retrieve score here-->
+            <p> ___ out of 10</p>
+            <!--maybe add function in js that outputs certain text depending on score-->
         </div>
     </div>
 </body>
