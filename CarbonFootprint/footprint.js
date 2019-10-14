@@ -53,9 +53,9 @@ function changeState(){
                 state++;
                 break;
             case 6:
+                outputScore();
                 document.getElementById("factoid3").style.display = "none";
                 document.getElementById("finalScore").style.display = "block";
-                //document.write(getScore());
                 break;
             default:
                 alert("There has been an error");
@@ -86,6 +86,8 @@ function displayError(){//tells user to pick an option
     element.setAttributeNode(pAttribute);
 }
 
-function getScore(){
-    return score;
+function outputScore(){
+    document.getElementById("finalScore1").innerHTML = "Your score:";
+    document.getElementById("finalScore2").innerHTML = score + " out of 10";
+
 }

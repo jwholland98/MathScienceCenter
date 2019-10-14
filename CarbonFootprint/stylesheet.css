@@ -56,6 +56,10 @@ h2{
     display:none;
 }
 
+#finalScore2{
+    font-size: 120%;
+}
+
 #num{
     font-size: 50%;
 }
