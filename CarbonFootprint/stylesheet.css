@@ -55,9 +55,16 @@ h2{
 #finalScore{
     display:none;
 }
-
 #finalScore2{
     font-size: 120%;
+    border: 1px solid black;
+}
+#howWell{
+    border: 1px solid black;
+    font-size: 70%;
+}
+#getBetter{
+    font-size: 50%;
 }
 
 #num{
