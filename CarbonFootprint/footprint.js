@@ -54,7 +54,7 @@ function verify(){
         }
 
         changeState();
-        if(plzSelectDisplay){
+        if(!factoid){
             first.checked=false;
             second.checked=false;
             third.checked=false;
