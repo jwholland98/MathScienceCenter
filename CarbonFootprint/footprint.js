@@ -111,6 +111,10 @@ function outputScore(){
     document.getElementById("getBetter").innerHTML = total;
 }
 
+function refresh(){
+    location.reload(true);
+}
+
 var timeout = setTimeout("location.reload(true);",30000);
 function resetTimeout() {
     clearTimeout(timeout);
