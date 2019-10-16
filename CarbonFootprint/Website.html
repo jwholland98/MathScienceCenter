@@ -4,7 +4,6 @@
     <title>Carbon Footprint Website</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <script src="footprint.js">
-
     </script>
 </head>
 <body>
@@ -23,11 +22,11 @@
             <p id="question">How often do you recycle?</p>
             <div id=choices>
                 <label for="first" class="choices">Always:</label>
-                <input type="radio" id="first" name="choice" value="">
+                <input type="radio" id="first" name="choice" value="" onClick="resetTimeout()">
                 <label for="second" class="choices">Sometimes:</label>
-                <input type="radio" id="second" name="choice" value="">
+                <input type="radio" id="second" name="choice" value=""onClick="resetTimeout()">
                 <label for="third" class="choices">Never:</label>
-                <input type="radio" id="third" name="choice" value="">
+                <input type="radio" id="third" name="choice" value=""onClick="resetTimeout()">
             </div>
             <button onClick="verify()">next</button>
             <p id=select>Please select an option</p>
@@ -37,8 +36,6 @@
             <div id="finalScore2"></div>
             <div id="howWell"></div>
             <div id=getBetter></div>
-            <!--maybe add function in js that outputs certain text depending on score-->
-            <!--might need to be in js-->
         </div>
     </div>
 </body>

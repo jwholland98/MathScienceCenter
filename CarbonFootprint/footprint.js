@@ -28,6 +28,7 @@ var questions=[
 ];
 
 function verify(){
+    resetTimeout()
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var third = document.getElementById("third");
@@ -108,4 +109,10 @@ function outputScore(){
         }
     }
     document.getElementById("getBetter").innerHTML = total;
+}
+
+var timeout = setTimeout("location.reload(true);",30000);
+function resetTimeout() {
+    clearTimeout(timeout);
+    timeout = setTimeout("location.reload(true);",30000);
 }
