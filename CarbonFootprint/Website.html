@@ -17,61 +17,26 @@
     <br>
     <br>
     <br>
-    <div id="allQuestions">
-        <div id="question1">
+    <div id="box">
+        <div id=questions>
             <p id="num">Question 1 of 10:</p>
-            <p>How often do you recycle?</p>
-            <label for="first" class="choices">Always:</label>
-            <input type="radio" id="first" name="choice" value="">
-            <label for="second" class="choices">Sometimes:</label>
-            <input type="radio" id="second" name="choice" value="">
-            <label for="third" class="choices">Never:</label>
-            <input type="radio" id="third" name="choice" value="">
-            <br>
-            <button onClick="verify()">submit</button>
-        </div>
-        <div id="factoid1">
-            <p>Recycling can help by...</p>
-            <button onClick="changeState()">submit</button>
-        </div>
-        <div id="question2">
-                <p id="num">Question 2 of 10:</p>
-                <p>How often do you carpool?</p>
+            <p id="question">How often do you recycle?</p>
+            <div id=choices>
                 <label for="first" class="choices">Always:</label>
                 <input type="radio" id="first" name="choice" value="">
                 <label for="second" class="choices">Sometimes:</label>
                 <input type="radio" id="second" name="choice" value="">
                 <label for="third" class="choices">Never:</label>
                 <input type="radio" id="third" name="choice" value="">
-                <br>
-                <button onClick="verify()">submit</button>
-            </form>
-        </div>
-        <div id="factoid2">
-            <p>Carpooling helps cut down on...</p>
-            <button onClick="changeState()">submit</button>
-        </div>
-        <div id="question3">
-            <p id="num">Question 3 of 10:</p>
-            <p>How often do you ride a bike?</p>
-            <label for="first" class="choices">Always:</label>
-            <input type="radio" id="first" name="choice" value="">
-            <label for="second" class="choices">Sometimes:</label>
-            <input type="radio" id="second" name="choice" value="">
-            <label for="third" class="choices">Never:</label>
-            <input type="radio" id="third" name="choice" value="">
-            <br>
-            <button onClick="verify()">submit</button>
-        </div>
-        <div id="factoid3">
-            <p>Riding your bike lowers...</p>
-            <button onClick="changeState()">submit</button>
+            </div>
+            <button onClick="verify()">next</button>
+            <p id=select>Please select an option</p>
         </div>
         <div id="finalScore">
-            <p id="finalScore1">Your score:</p>
-            <p id="finalScore2"></p>
-            <p id="howWell"></p>
-            <p id=getBetter></p>
+            <div id="finalScore1">Your score:</div>
+            <div id="finalScore2"></div>
+            <div id="howWell"></div>
+            <div id=getBetter></div>
             <!--maybe add function in js that outputs certain text depending on score-->
             <!--might need to be in js-->
         </div>

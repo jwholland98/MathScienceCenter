@@ -1,126 +1,83 @@
-var state = 1;
+var state = 0;
 var score = 0;
 var plzSelectDisplay = false;
+var factoid = false;
 var badAnswers=[[true,"You can begin recycling more"],
                 [true, "You can start carpooling more"],
-                [true, "You can begin riding your bike to places closer to you"]]
+                [true, "You can begin riding your bike to places closer to you"]];
+var questions=[
+    {question:"How often do you recycle?", getBetter:"Recycling can help by..."},
+    {question:"How often do you carpool?", getBetter:"Carpooling helps cut down on..."},
+    {question:"How often do you ride a bike?", getBetter: "Riding your bike lowers..."}
+];
 
 function verify(){
     var first = document.getElementById("first");
     var second = document.getElementById("second");
     var third = document.getElementById("third");
-    if(!first.checked && !second.checked && !third.checked){//checks if any choice i selected
-        if(!plzSelectDisplay)
-            displayError();//maybe add para after submit saying to choice one
+    if(!first.checked && !second.checked && !third.checked){//checks if any choice is selected
+        if(!plzSelectDisplay){
+            document.getElementById("select").style.display = "block";
+            plzSelectDisplay = true;
+        }
     }
     else{
         //update global point system based on answer
-        if(first.checked)
-            score=score+2;
-        if(second.checked)
-            score++;
-        first.checked=false;
-        second.checked=false;
-        third.checked=false;
-        changeState(second, third);
-    }
-}
-
-function changeState(second, third){
-        plzSelectDisplay = false;
-        //goes to new question or factoid
-        switch(state){
-            case 1:
-                document.getElementById("question1").style.display = "none";
-                document.getElementById("factoid1").style.display = "block";
-                state++;
-                //if(second.checked)
-
-                break;
-            case 2:
-                document.getElementById("factoid1").style.display = "none";
-                document.getElementById("question2").style.display = "block";
-                state++;
-                break;
-            case 3:
-                document.getElementById("question2").style.display = "none";
-                document.getElementById("factoid2").style.display = "block";
-                state++;
-                break;
-            case 4:
-                document.getElementById("factoid2").style.display = "none";
-                document.getElementById("question3").style.display = "block";
-                state++;
-                break;
-            case 5:
-                document.getElementById("question3").style.display = "none";
-                document.getElementById("factoid3").style.display = "block";
-                state++;
-                break;
-            case 6:
-                outputScore();
-                document.getElementById("factoid3").style.display = "none";
-                document.getElementById("finalScore").style.display = "block";
-                break;
-            default:
-                alert("There has been an error");
+        if(!factoid){
+            if(first.checked){
+                badAnswers[state][0]=false;
+                score=score+2;
+            }
+            if(second.checked)
+                score++;
         }
+
+        changeState();
+        if(plzSelectDisplay){
+            first.checked=false;
+            second.checked=false;
+            third.checked=false;
+        }
+    }
 }
 
-function displayError(){//tells user to pick an option
-    plzSelectdisplay = true;
-    var element = document.createElement("p");
-    var text = document.createTextNode("Please select an option");
-    var question;
-    switch(state){
-        case 1:
-            question = document.getElementById("question1")
-            break;
-        case 3:
-            question = document.getElementById("question2")
-            break;
-        case 7:
-            question = document.getElementById("question3")
-            break;
-        case 9:
-            question = document.getElementById("question4")
-            break;
-        case 11:
-            question = document.getElementById("question5")
-            break;
-        case 13:
-            question = document.getElementById("question6")
-            break;
-        case 15:
-            question = document.getElementById("question7")
-            break;
-        case 17:
-            question = document.getElementById("question8")
-            break;
-        case 19:
-            question = document.getElementById("question9")
-            break;
-        case 21:
-            question = document.getElementById("question10")
-            break;
-        default:
-            alert("An error has occurred")
+function changeState(){
+    //goes to new question or factoid
+    if(!factoid){
+        document.getElementById("question").innerHTML = questions[state].getBetter;
+        document.getElementById("choices").style.display = "none";
+        document.getElementById("select").style.display = "none";
+        factoid=true;
     }
-    question.appendChild(element);
-    element.appendChild(text);
-    //resizes text below
-    var pAttribute = document.createAttribute("id");
-    pAttribute.value = "plzSelect";
-    element.setAttributeNode(pAttribute);
+    else if(state==2)
+        outputScore();
+    else{
+        state++;
+        document.getElementById("num").innerHTML = "Question " + (state+1) + " of 10";
+        document.getElementById("question").innerHTML = questions[state].question;
+        document.getElementById("choices").style.display = "block";
+        plzSelectDisplay = false;
+        factoid=false;
+    }
 }
 
 function outputScore(){
+    score=score/2;
+    document.getElementById("questions").style.display = "none";
+    document.getElementById("finalScore").style.display = "block";
     var total="";
     document.getElementById("finalScore2").innerHTML = score + " out of 10";
     var end = document.getElementById("howWell");
     if(score == 0)
         end.innerHTML = "You have a long ways to go, but here is some ways you can reduce your footprint:";
-    //add for other scores
+    if(score > 0 && score <= 3)
+        end.innerHTML = "You've got a good start! Here are some more ways you can reduce your footprint:";
+    if(score > 3 && score <= 6)
+        end.innerHTML = "You are doing great! Here is some more ways you can reduce your footprint:";
+    if(score > 6 && score <= 9)
+        end.innerHTML = "You are doing an amazing job. Here is some more ways you can reduce your footprint:";
+    if(score == 10)
+        end.innerHTML = "You are doing perfect! Maybe you can think of some mpre ways to reduce your footprint!";
     for(var i=0;i<badAnswers.length;i++){
         if(badAnswers[i][0]==true)
             total= total + "<br> - " + badAnswers[i][1];

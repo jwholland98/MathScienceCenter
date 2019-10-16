@@ -22,7 +22,7 @@ h2{
     margin: auto;
 }
 
-#allQuestions{
+#box{
     background-color: rgb(50, 182, 45);
     border: 2px solid black;
     border-radius: 10px;
@@ -30,26 +30,8 @@ h2{
     font-size: 200%;
     vertical-align: center;
 }
-#question1{
+#question{
     display:block;
-}
-#factoid1{
-    font-size: 150%;
-    display:none;
-}
-#question2{
-    display:none;
-}
-#factoid2{
-    font-size: 150%;
-    display:none;
-}
-#question3{
-    display:none;
-}
-#factoid3{
-    font-size: 150%;
-    display:none;
 }
 
 #finalScore{
@@ -57,10 +39,9 @@ h2{
 }
 #finalScore2{
     font-size: 120%;
-    border: 1px solid black;
 }
 #howWell{
-    border: 1px solid black;
+    padding:5px;
     font-size: 70%;
 }
 #getBetter{
@@ -82,8 +63,7 @@ label.choices:hover{
     border: 1px solid black;
 }
 
-#plzselect{
-    display: inline;
-    font-family: arial, helvetica, sans-serif;
-    font-size: 14px;
+#select{
+    display: none;
+    font-size: 20px;
 }
