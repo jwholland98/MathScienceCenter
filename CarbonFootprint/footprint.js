@@ -1,6 +1,6 @@
 var state = 0;
 var score = 0;
-var plzSelectDisplay = false;
+//var plzSelectDisplay = false;
 var factoid = false;
 var badAnswers=[
     [true,"You can begin recycling more at home."],
@@ -29,18 +29,18 @@ var questions=[
 
 function verify(){
     resetTimeout()
-    var first = document.getElementById("first");
+    /*var first = document.getElementById("first");
     var second = document.getElementById("second");
-    var third = document.getElementById("third");
-    if(!first.checked && !second.checked && !third.checked){//checks if any choice is selected
+    var third = document.getElementById("third");*/
+    /*if(!first.checked && !second.checked && !third.checked){//checks if any choice is selected
         if(!plzSelectDisplay){
             document.getElementById("select").style.display = "block";
             plzSelectDisplay = true;
         }
-    }
-    else{
+    }*/
+    //else{
         //update global point system based on answer
-        if(!factoid){
+        //if(!factoid){
             if(first.checked && (state!=4 || state !=5 || state !=8)){
                 badAnswers[state][0]=false;
                 score=score+2;
@@ -51,7 +51,7 @@ function verify(){
             }
             if(second.checked)
                 score++;
-        }
+        //}
 
         changeState();
         if(!factoid){
@@ -59,7 +59,7 @@ function verify(){
             second.checked=false;
             third.checked=false;
         }
-    }
+    //}
 }
 
 function changeState(){
@@ -67,7 +67,8 @@ function changeState(){
     if(!factoid){
         document.getElementById("question").innerHTML = questions[state].getBetter;
         document.getElementById("choices").style.display = "none";
-        document.getElementById("select").style.display = "none";
+        //document.getElementById("select").style.display = "none";
+        document.getElementById("next").style.display = "inline-block";
         factoid=true;
     }
     else if(state==9)
@@ -77,7 +78,8 @@ function changeState(){
         document.getElementById("num").innerHTML = "Question " + (state+1) + " of 10";
         document.getElementById("question").innerHTML = questions[state].question;
         document.getElementById("choices").style.display = "block";
-        plzSelectDisplay = false;
+        document.getElementById("next").style.display = "none";
+        //plzSelectDisplay = false;
         factoid=false;
     }
 }

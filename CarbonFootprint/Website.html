@@ -21,15 +21,15 @@
             <p id="num">Question 1 of 10:</p>
             <p id="question">How often do you recycle?</p>
             <div id=choices>
-                <label for="first" class="choices">Always:</label>
-                <input type="radio" id="first" name="choice" value="" onClick="resetTimeout()">
-                <label for="second" class="choices">Sometimes:</label>
-                <input type="radio" id="second" name="choice" value=""onClick="resetTimeout()">
-                <label for="third" class="choices">Never:</label>
-                <input type="radio" id="third" name="choice" value=""onClick="resetTimeout()">
+                <label for="first" class="choices">Always</label>
+                <input type="radio" id="first" name="choice" value="" onClick="verify()">
+                <label for="second" class="choices">Sometimes</label>
+                <input type="radio" id="second" name="choice" value=""onClick="verify()">
+                <label for="third" class="choices">Never</label>
+                <input type="radio" id="third" name="choice" value=""onClick="verify()">
             </div>
-            <button onClick="verify()">next</button>
-            <p id=select>Please select an option</p>
+            <button onClick="changeState()" id="next">next</button>
+            <!--<p id=select>Please select an option</p>-->
         </div>
         <div id="finalScore">
             <div id="finalScore1">Your score:</div>

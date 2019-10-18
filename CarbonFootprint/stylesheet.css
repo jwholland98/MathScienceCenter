@@ -4,7 +4,7 @@ body{
     font-size: 20px;
     text-align: center;
     background-image: url(treeBackground.jpg);
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     background-size: cover;
     
 }
@@ -26,12 +26,24 @@ h2{
     background-color: rgb(50, 182, 45);
     border: 2px solid black;
     border-radius: 10px;
-    height: 350px;
+    /*height: 350px;*/
     font-size: 200%;
     vertical-align: center;
+    padding: 40px;
 }
 #question{
     display:block;
+}
+#next{
+    display:none;
+    font-size:50px;
+    padding:20px;
+    padding-left:30px;
+    padding-right:30px;
+    border: 2px solid black;
+}
+#next:hover{
+    border: 1px solid black;
 }
 
 #finalScore{
@@ -58,12 +70,21 @@ label.choices{
     /*need to see why style isnt changing*/
     font-family: arial, helvetica, sans-serif;
     font-size: 32px;
+    background-color: darkolivegreen;
+    border: 2px solid black;
 }
 label.choices:hover{
     border: 1px solid black;
 }
+input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
 
-#select{
+/*#select{
     display: none;
     font-size: 20px;
-}
+}*/
