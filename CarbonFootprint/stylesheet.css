@@ -4,8 +4,9 @@ body{
     font-size: 20px;
     text-align: center;
     background-image: url(treeBackground.jpg);
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+
     
 }
 
@@ -28,6 +29,7 @@ h2{
     border-radius: 10px;
     /*height: 350px;*/
     font-size: 200%;
+
     vertical-align: center;
     padding: 40px;
 }
